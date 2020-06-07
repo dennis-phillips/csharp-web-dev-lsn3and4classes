@@ -30,6 +30,11 @@ namespace SchoolPractice
         // TODO: Complete the AddGrade method.
         public void AddGrade(int courseCredits, double grade)
         {
+            double qualityScore = courseCredits * grade;
+            NumberOfCredits += courseCredits;
+            double gpaCalc = qualityScore / NumberOfCredits;
+            Gpa = gpaCalc;
+            
             // Update the appropriate properties: NumberOfCredits, Gpa
         }
 
@@ -37,14 +42,55 @@ namespace SchoolPractice
         public string GetGradeLevel(int credits)
         {
             // Determine the grade level of the student based on NumberOfCredits
-            return "grade level tbd";
+            if (NumberOfCredits <= 29)
+            {
+                return "Freshman";
+            }
+            if (NumberOfCredits >= 30 && NumberOfCredits <= 59)
+            {
+                return "Sophmore";
+            }
+            if (NumberOfCredits >= 60 && NumberOfCredits <= 89)
+            {
+                return "Junior";
+            }
+            else
+            {
+                return "Senior";
+            }
         }
 
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather
         //  than just the class fields.
+        public override string ToString()
+        {
+            return Name + " ( ID: " + StudentId + "Credits: " + NumberOfCredits + ", GPA: " + Gpa + ")";
+        }
 
         // TODO: Add your custom 'Equals' method here. Consider which fields should match in order to call two
         //  Student objects equal.
+
+        public override bool Equals(object toBeCompared)
+        {
+
+            if (toBeCompared == this)
+            {
+                return true;
+            }
+
+            if (toBeCompared == null)
+            {
+                return false;
+            }
+
+            if (toBeCompared.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            Student s = toBeCompared as Student;
+            return s.StudentId == StudentId;
+        }
 
     }
 }
