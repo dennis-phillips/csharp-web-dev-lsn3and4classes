@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace SchoolPractice
 {
@@ -10,9 +11,10 @@ namespace SchoolPractice
         {
             // TODO: Test your exercise solutions with print statements here.
             public Student dennis = new Student("Dennis", 1, 30, 3.0 );
-            public Student kelly = new Student("Kelly", 2, 70, 3.0);
+            public Student moe = new Student("Moe", 2, 70, 3.0);
+        
             
 
         }
-    }
+    } 
 }
