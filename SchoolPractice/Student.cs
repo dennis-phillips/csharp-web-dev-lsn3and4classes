@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace SchoolPractice
 {
     public class Student
