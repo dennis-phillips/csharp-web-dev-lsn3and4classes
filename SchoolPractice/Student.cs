@@ -65,7 +65,7 @@ namespace SchoolPractice
         //  than just the class fields.
         public override string ToString()
         {
-            return Name + " ( ID: " + StudentId + "Credits: " + NumberOfCredits + ", GPA: " + Gpa + ")";
+            return Name + " ( ID: " + StudentId + " Credits: " + NumberOfCredits + ", GPA: " + Gpa + ")";
         }
 
         // TODO: Add your custom 'Equals' method here. Consider which fields should match in order to call two
